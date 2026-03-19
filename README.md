@@ -25,13 +25,26 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [x] Describe the game's purpose.
+- [x] Detail which bugs you found.
+   - Hint direction messaging was incorrect (too high/too low guidance was inconsistent).
+   - New game/reset behavior did not always fully reinitialize state.
+   - Game logic was mixed with UI code, which made debugging and test coverage harder.
+- [x] Explain what fixes you applied.
+   - Refactored core game functions into `logic_utils.py` for clearer separation of concerns.
+   - Corrected hint-direction behavior in `check_guess` and validated with tests.
+   - Improved reset/session-state handling in `app.py` so state is consistently managed across reruns.
+   - Updated tests in `tests/test_game_logic.py` to validate both outcomes and player-facing hint messages.
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+- [x] Insert a screenshot of your fixed, winning game here.
+   ![Fixed winning game screenshot](assets/fixed-winning-game.png)
+
+### Challenge 1: Advanced Edge-Case Testing
+
+- [x] Included in this submission.
+   ![Pytest passing edge-case tests](assets/pytest-edge-cases-passing.png)
 
 ## 🚀 Stretch Features
 
